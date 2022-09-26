@@ -1,0 +1,19 @@
+---
+apiVersion: k3d.io/v1alpha4
+kind: Simple
+metadata:
+  name: develop
+servers: 1
+agents: 0
+image: docker.io/rancher/k3s:v1.24.4-k3s1
+options:
+  k3d:
+    wait: true
+    timeout: "60s"
+volumes:
+  - volume: /srv/k3d/volumes/manifests/:/var/lib/rancher/k3s/server/manifests/
+    nodeFilters:
+      - all
+  - volume: /srv/k3d/volumes/storage/:/var/lib/rancher/k3s/storage
+    nodeFilters:
+      - all
