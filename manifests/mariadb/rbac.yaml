@@ -1,0 +1,24 @@
+---
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: mariadb-passwords-reader
+rules:
+  - apiGroups: [""]
+    resources: ["secrets"]
+    resourceNames: ["mariadb-passwords"]
+    verbs: ["get", "list", "watch"]
+
+---
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: composable-mariadb-passwords-reader
+subjects:
+  - kind: ServiceAccount
+    name: composable-controller-manager
+    namespace: composable-system
+roleRef:
+  kind: Role
+  name: mariadb-passwords-reader
+  apiGroup: rbac.authorization.k8s.io
