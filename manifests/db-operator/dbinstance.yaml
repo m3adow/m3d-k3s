@@ -1,0 +1,13 @@
+---
+apiVersion: kci.rocks/v1alpha1
+kind: DbInstance
+metadata:
+  name: mariadb
+spec:
+  adminSecretRef:
+    Name: mariadb-admin-credentials
+    Namespace: db-operator
+  engine: mysql
+  generic:
+    host: mariadb.mariadb.svc.cluster.local
+    port: 3306
