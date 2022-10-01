@@ -1,0 +1,13 @@
+---
+apiVersion: "kci.rocks/v1alpha1"
+kind: "Database"
+metadata:
+  name: "nextcloud"
+spec:
+  secretName: mariadb-credentials
+  instance: mariadb
+  # Preserve DB if this object is deleted
+  deletionProtected: true
+  backup:
+    enable: false
+    cron: "0 0 * * *" # Required by CRD, although unused
