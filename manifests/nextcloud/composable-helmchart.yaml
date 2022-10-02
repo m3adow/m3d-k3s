@@ -30,3 +30,5 @@ spec:
             format-transformers:
               - Base64ToString
         internalDatabase.enabled: "false"
+        persistence.enabled: "true"
+        persistence.nextcloudData.enabled: "true"
