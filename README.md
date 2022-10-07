@@ -11,7 +11,7 @@ Intended infrastructure scope:
 - [x] Database (MariaDB)
 - [x] [DB-Operator][db-operator]
 - [x] [Composable Operator][composable-operator]
-- [ ] [k8up][k8up]
+- [ ] [k8up][k8up] ❄❄❄ for now ❄❄❄ (hoping for implementation of [k8up issue #319][k8up-issue-319])
 - [ ] [Flux][flux]
 - [ ] [External DNS][external-dns]
 - [ ] Prometheus + Alertmanager
@@ -43,6 +43,7 @@ Application scope (subject to change):
 [ingress-nginx]: https://kubernetes.github.io/ingress-nginx/
 [k8s-gateway]: https://github.com/ori-edge/k8s_gateway
 [k8up]: https://github.com/k8up-io/k8up
+[k8up-issue-319]: https://github.com/k8up-io/k8up/issues/319
 [nextcloud]: https://nextcloud.com/
 [nitter]: https://github.com/zedeus/nitter
 [reloader]: https://github.com/stakater/Reloader
