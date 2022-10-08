@@ -5,7 +5,7 @@ kind: Kustomization
 namespace: db-operator
 
 resources:
-  - composable-mariadb-admin-credentials.yaml
+  - composable-mysql-root-credentials.yaml
   - dbinstance.yaml
   - helmchart.yaml
   - namespace.yaml

@@ -2,11 +2,11 @@
 kind: Role
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
-  name: mariadb-admin-credentials
+  name: mysql-admin-credentials
 rules:
   - apiGroups: [""]
     resources: ["secrets"]
-    # resourceNames: ["mariadb-admin-credentials"] # Doesn't seem to work with resourceNames :(
+    # resourceNames: ["mysql-admin-credentials"] # Doesn't seem to work with resourceNames :(
     verbs:
       - create
       - delete
@@ -21,12 +21,12 @@ rules:
 kind: RoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
-  name: composable-mariadb-admin-credentials
+  name: composable-mysql-admin-credentials
 subjects:
   - kind: ServiceAccount
     name: composable-controller-manager
     namespace: composable-system
 roleRef:
   kind: Role
-  name: mariadb-admin-credentials
+  name: mysql-admin-credentials
   apiGroup: rbac.authorization.k8s.io
