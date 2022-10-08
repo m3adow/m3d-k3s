@@ -2,16 +2,17 @@
 
 **Work in progress!**
 
-Kubernetes manifests as well as some K3s/K3d configuration manifests intended for a "home production ready" single-node installation, including [Day 2 operations][day-2].
+Kubernetes manifests as well as some K3s/K3d configuration manifests intended for a "home production ready" single-node installation, including [Day 2 operations][day-2] tasks like Backups and keeping software, Helm Charts and images up to date.
 
 Intended infrastructure scope:
 
 - [x] cert-manager
 - [x] Sealed Secrets
-- [x] Database (MariaDB)
+- [x] ~~Database (MariaDB)~~ _(succeeded by MySQL Operator)_
+- [x] MySQL Operator + Database \*(may become MySQL Cluster in the future)
 - [x] [DB-Operator][db-operator]
 - [x] [Composable Operator][composable-operator]
-- [ ] [k8up][k8up] ❄❄❄ for now ❄❄❄ (hoping for implementation of [k8up issue #319][k8up-issue-319])
+- [ ] [k8up][k8up] ❄❄❄ on hold for now ❄❄❄ (hoping for an imminent implementation of [k8up issue #319][k8up-issue-319])
 - [ ] [Flux][flux]
 - [ ] [External DNS][external-dns]
 - [ ] Prometheus + Alertmanager
