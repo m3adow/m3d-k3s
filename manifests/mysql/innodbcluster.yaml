@@ -8,3 +8,14 @@ spec:
   instances: 1
   router:
     instances: 1
+  backupProfiles:
+    - name: daily-backup
+      dumpInstance:
+        storage:
+          persistentVolumeClaim:
+            claimName: main-db-backups
+  backupSchedules:
+    - name: daily
+      schedule: "54 * * * *"
+      backupProfileName: daily-backup
+      enabled: true
