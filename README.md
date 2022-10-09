@@ -9,7 +9,7 @@ Intended infrastructure scope:
 - [x] cert-manager
 - [x] Sealed Secrets
 - [x] ~~Database (MariaDB)~~ _(succeeded by MySQL Operator)_
-- [x] MySQL Operator + Database \*(may become MySQL Cluster in the future)
+- [x] MySQL Operator + Database _(may become MySQL Cluster in the future)_
 - [x] [DB-Operator][db-operator]
 - [x] [Composable Operator][composable-operator]
 - [ ] [k8up][k8up] ❄❄❄ on hold for now ❄❄❄ (hoping for an imminent implementation of [k8up issue #319][k8up-issue-319])
