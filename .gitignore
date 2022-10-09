@@ -1,2 +1,6 @@
 **/secret/
+**/secret-*.yaml
 /tmp/
+
+# K3d install script should be downloaded freshly
+/k3d/install.sh
