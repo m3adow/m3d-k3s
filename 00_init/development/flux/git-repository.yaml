@@ -1,0 +1,13 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: GitRepository
+metadata:
+  name: m3d-k3s
+  namespace: flux-system
+spec:
+  interval: 1m0s
+  ref:
+    branch: develop
+  secretRef:
+    name: k3s-repo-identity
+  url: ssh://git@github.com/m3adow/my-k3s-server-at-home
