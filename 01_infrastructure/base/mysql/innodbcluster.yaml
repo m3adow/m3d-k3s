@@ -1,0 +1,21 @@
+apiVersion: mysql.oracle.com/v2
+kind: InnoDBCluster
+metadata:
+  name: main-db
+spec:
+  secretName: mysql-credentials
+  tlsUseSelfSigned: true
+  instances: 1
+  router:
+    instances: 1
+  backupProfiles:
+    - name: daily-backup
+      dumpInstance:
+        storage:
+          persistentVolumeClaim:
+            claimName: main-db-backups
+  backupSchedules:
+    - name: daily
+      schedule: "54 * * * *"
+      backupProfileName: daily-backup
+      enabled: true

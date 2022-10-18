@@ -1,0 +1,15 @@
+---
+apiVersion: helm.cattle.io/v1
+kind: HelmChart
+metadata:
+  name: db-operator
+spec:
+  chart: db-operator
+  version: "<2.0.0"
+  repo: https://kloeckner-i.github.io/charts
+  valuesContent: |
+    config:
+      instance:
+        google: {}
+        percona: {}
+  targetNamespace: db-operator

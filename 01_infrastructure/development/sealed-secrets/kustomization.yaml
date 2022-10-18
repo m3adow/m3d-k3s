@@ -1,0 +1,9 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: sealed-secrets
+
+# Some files may be .gitignored
+resources:
+  # Use backed up keys so secrets don't have to be re-created on recretation
+  - secret/secret-sealed-secrets-key.yaml
