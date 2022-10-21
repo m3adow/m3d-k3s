@@ -1,4 +1,7 @@
-# source (removed CRDs): https://github.com/composable-operator/composable/releases/download/v0.2.1/manifests.yaml
+# source: https://github.com/composable-operator/composable/releases/download/v0.2.1/manifests.yaml
+# Changes:
+# * Removed CRDs (moved to init phase)
+# * Added "readOnlyRootFilesystem: true" securityContext to "composable-controller-manager" and "kube-rbac-proxy" Deployments (kube-linter errors)
 ---
 apiVersion: v1
 kind: Namespace
@@ -233,6 +236,7 @@ spec:
               memory: 64Mi
           securityContext:
             allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
           volumeMounts:
             - mountPath: /tmp/k8s-webhook-server/serving-certs
               name: cert
@@ -257,6 +261,7 @@ spec:
               memory: 64Mi
       securityContext:
         runAsNonRoot: true
+        readOnlyRootFilesystem: true
       serviceAccountName: composable-controller-manager
       terminationGracePeriodSeconds: 10
       volumes:
