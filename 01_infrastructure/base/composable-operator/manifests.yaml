@@ -1,4 +1,5 @@
 # source (removed CRDs): https://github.com/composable-operator/composable/releases/download/v0.2.1/manifests.yaml
+---
 apiVersion: v1
 kind: Namespace
 metadata:
