@@ -1,0 +1,10 @@
+---
+apiVersion: helm.cattle.io/v1
+kind: HelmChart
+metadata:
+  name: cert-manager
+spec:
+  chart: cert-manager
+  version: "<2.0.0"
+  repo: https://charts.jetstack.io
+  targetNamespace: cert-manager
