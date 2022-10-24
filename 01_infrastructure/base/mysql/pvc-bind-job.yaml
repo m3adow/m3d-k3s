@@ -1,0 +1,34 @@
+# No-op job to get the PVC status from "Pending" to "Bound"
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: main-db-backup-bind-job
+spec:
+  template:
+    spec:
+      containers:
+        - name: no-op
+          image: busybox:stable
+          command: ["sh", "-c", "true"]
+          resources:
+            requests:
+              memory: "1Mi"
+              cpu: "1m"
+            limits:
+              memory: "10Mi"
+              cpu: "10m"
+          securityContext:
+            readOnlyRootFilesystem: true
+          volumeMounts:
+            - mountPath: /mnt/
+              name: main-db-backups
+      restartPolicy: Never
+      securityContext:
+        runAsNonRoot: true
+      volumes:
+        - name: main-db-backups
+          persistentVolumeClaim:
+            claimName: main-db-backups
+  # Delete after 10 minutes to not leave remnants in the cluster
+  ttlSecondsAfterFinished: 600
