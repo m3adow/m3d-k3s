@@ -18,14 +18,14 @@ spec:
         externalDatabase.enabled: "true"
         externalDatabase.type: mysql
         externalDatabase.existingSecret.enabled: "true"
-        externalDatabase.host: "mariadb.mariadb.svc.cluster.local:3306"
-        externalDatabase.existingSecret.secretName: mariadb-credentials
+        externalDatabase.host: "main-db.mysql.svc.cluster.local:3306"
+        externalDatabase.existingSecret.secretName: db-credentials
         externalDatabase.existingSecret.usernameKey: USER
         externalDatabase.existingSecret.passwordKey: PASSWORD
         externalDatabase.database:
           getValueFrom:
             kind: Secret
-            name: mariadb-credentials
+            name: db-credentials
             path: "{.data.DB}"
             format-transformers:
               - Base64ToString

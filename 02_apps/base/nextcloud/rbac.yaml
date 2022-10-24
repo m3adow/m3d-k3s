@@ -6,7 +6,7 @@ metadata:
 rules:
   - apiGroups: [""]
     resources: ["secrets"]
-    resourceNames: ["mariadb-credentials"]
+    resourceNames: ["db-credentials"]
     verbs: ["get", "list", "watch"]
   - apiGroups: ["helm.cattle.io"]
     resources: ["helmcharts"]

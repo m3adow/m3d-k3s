@@ -4,8 +4,8 @@ kind: "Database"
 metadata:
   name: "nextcloud"
 spec:
-  secretName: mariadb-credentials
-  instance: mariadb
+  secretName: db-credentials
+  instance: mysql-main
   # Preserve DB if this object is deleted
   deletionProtected: true
   backup:
