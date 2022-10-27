@@ -35,4 +35,19 @@ Application scope (subject to change):
 
 Other tasks:
 
-- [ ] Create Makefile for bootstrapping
+- [x] Create Makefile for bootstrapping
+
+## Development
+
+Development is done via [k3d](https://k3d.io/). I recommend to set ACLs for the `volumes` folder:
+
+```bash
+setfacl -Rdm ${USER}:rwx k3d/volumes/
+```
+
+This will prevent permission problems when `clean`ing the development environment.
+
+- To create a new cluster on a fresh system, run `make develop` or `make new`
+- To tear down the development cluster, run `make clean`
+- To recreate a cluster run `make new`
+- Starting/Stopping clusters can be done with `make start`/`make stop`
