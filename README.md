@@ -1,4 +1,4 @@
-# My personal single-node K3s template
+# m3d-k3s
 
 **Work in progress!**
 

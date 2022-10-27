@@ -10,4 +10,4 @@ spec:
     branch: develop
   secretRef:
     name: k3s-repo-identity
-  url: ssh://git@github.com/m3adow/my-k3s-server-at-home
+  url: ssh://git@github.com:m3adow/m3d-k3s.git
