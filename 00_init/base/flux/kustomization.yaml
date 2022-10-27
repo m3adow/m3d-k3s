@@ -7,4 +7,11 @@ namespace: flux-system
 resources:
   - github.com/fluxcd/flux2/manifests/install?ref=v0.35.0
 
+  - helm-repositories/bitnami.yaml
+  - helm-repositories/jetstack.yaml
+  - helm-repositories/kloeckner.yaml
+  - helm-repositories/mysql.yaml
+  - helm-repositories/nextcloud.yaml
+  - helm-repositories/sealed-secrets.yaml
+
   - sealed-secret.yaml
