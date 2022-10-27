@@ -32,6 +32,7 @@ Application scope (subject to change):
 - [ ] [Nextcloud](https://nextcloud.com/) _(Basic installation stuff done, customization WIP)_
 - [ ] [Nitter](https://github.com/zedeus/nitter)
 - [ ] [Tiny Tiny RSS](https://tt-rss.org/)
+- [ ] [Firefox Sync](https://github.com/mozilla/fxa/)
 
 Other tasks:
 
