@@ -25,7 +25,8 @@ spec:
               name: main-db-backups
       restartPolicy: Never
       securityContext:
-        runAsNonRoot: true
+        # Run as 'nobody'
+        runAsUser: 65534
       volumes:
         - name: main-db-backups
           persistentVolumeClaim:
