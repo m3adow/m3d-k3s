@@ -5,5 +5,5 @@ kind: Kustomization
 namespace: sealed-secrets
 
 resources:
-  - helmchart.yaml
+  - helmrelease.yaml
   - namespace.yaml
