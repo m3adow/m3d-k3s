@@ -1,0 +1,8 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: mysql
+spec:
+  interval: 6h
+  url: https://mysql.github.io/mysql-operator/

@@ -5,7 +5,7 @@ kind: Kustomization
 namespace: nextcloud
 
 resources:
-  - composable-helmchart.yaml
+  - helmrelease.yaml
   - database.yaml
   - namespace.yaml
   - rbac.yaml

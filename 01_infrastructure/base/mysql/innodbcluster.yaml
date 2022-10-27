@@ -17,6 +17,6 @@ spec:
             claimName: main-db-backups
   backupSchedules:
     - name: daily
-      schedule: "54 * * * *"
+      schedule: "54 2 * * *"
       backupProfileName: daily-backup
       enabled: true

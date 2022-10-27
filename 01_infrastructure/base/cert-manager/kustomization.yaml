@@ -6,7 +6,7 @@ namespace: cert-manager
 
 resources:
   - composable-clusterissuers.yaml
-  - helmchart.yaml
+  - helmrelease.yaml
   - namespace.yaml
   - rbac.yaml
   - sealed-secret-email.yaml

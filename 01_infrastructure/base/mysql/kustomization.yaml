@@ -7,6 +7,7 @@ namespace: mysql
 resources:
   - innodbcluster.yaml
   - namespace.yaml
+  - pvc-bind-job.yaml
   - pvc-main-db-backups.yaml
   - rbac.yaml
   - sealed-secret.yaml
