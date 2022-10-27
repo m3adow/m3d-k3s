@@ -13,7 +13,7 @@ Intended infrastructure scope:
 - [x] [DB-Operator](https://github.com/kloeckner-i/db-operator)
 - [x] [Composable Operator](https://github.com/composable-operator/composable)
 - [ ] [k8up](https://github.com/k8up-io/k8up) ❄❄❄ on hold for now ❄❄❄ (hoping for an imminent implementation of [k8up issue #319](https://github.com/k8up-io/k8up/issues/319))
-- [ ] [Flux](https://fluxcd.io/)
+- [x] [Flux](https://fluxcd.io/) _may be revisited in the future for image automation or notifications_
 - [ ] [External DNS](https://github.com/kubernetes-sigs/external-dns)
 - [ ] Prometheus + Alertmanager
 - [ ] [Renovate](https://docs.renovatebot.com/)
