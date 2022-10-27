@@ -1,0 +1,37 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: nextcloud
+spec:
+  interval: 1h
+  chart:
+    spec:
+      chart: nextcloud
+      version: <4.0.0
+      sourceRef:
+        kind: HelmRepository
+        name: nextcloud
+        namespace: flux-system
+  install:
+    remediation:
+      retries: 3
+  upgrade:
+    remediation:
+      retries: 3
+  values:
+    externalDatabase.enabled: "true"
+    externalDatabase.type: mysql
+    externalDatabase.existingSecret.enabled: "true"
+    externalDatabase.host: "main-db.mysql.svc.cluster.local:3306"
+    externalDatabase.existingSecret.secretName: db-credentials
+    externalDatabase.existingSecret.usernameKey: USER
+    externalDatabase.existingSecret.passwordKey: PASSWORD
+    internalDatabase.enabled: "false"
+    persistence.enabled: "true"
+    persistence.nextcloudData.enabled: "true"
+  valuesFrom:
+    - kind: Secret
+      name: db-credentials
+      targetPath: externalDatabase.database
+      valuesKey: DB
