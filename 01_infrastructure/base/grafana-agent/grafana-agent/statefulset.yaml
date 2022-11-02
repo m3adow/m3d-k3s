@@ -37,11 +37,17 @@ spec:
               name: agent-wal
             - mountPath: /etc/agent
               name: grafana-agent
+            - mountPath: /srv/basic-auth-passwords
+              name: basic-auth-passwords
+              readOnly: true
       serviceAccountName: grafana-agent
       volumes:
         - configMap:
             name: grafana-agent
           name: grafana-agent
+        - name: basic-auth-passwords
+          secret:
+            secretName: basic-auth-passwords
   updateStrategy:
     type: RollingUpdate
   volumeClaimTemplates:

@@ -11,8 +11,9 @@ metrics:
       remote_write:
         - url: https://prometheus-prod-01-eu-west-0.grafana.net/api/prom/push
           basic_auth:
+            # As the username can't be referenced via secret, use Flux' postBuild feature to replace a variable
             username: ${PROMETHEUS_BASIC_AUTH_USER}
-            password_file: /srv/prometheus-basic-auth-password
+            password_file: /srv/basic-auth-password/PROMETHEUS_BASIC_AUTH_PASSWORD
       scrape_configs:
         - bearer_token_file: /var/run/secrets/kubernetes.io/serviceaccount/token
           job_name: integrations/kubernetes/cadvisor
@@ -79,8 +80,9 @@ logs:
       clients:
         - url: https://logs-prod-eu-west-0.grafana.net/loki/api/v1/push
           basic_auth:
+            # As the username can't be referenced via secret, use Flux' postBuild feature to replace a variable
             username: ${LOKI_BASIC_AUTH_USER}
-            password_file: /srv/loki-basic-auth-password
+            password_file: /srv/basic-auth-passwords/LOKI_BASIC_AUTH_PASSWORD
           external_labels:
             cluster: cloud
             job: integrations/kubernetes/eventhandler
