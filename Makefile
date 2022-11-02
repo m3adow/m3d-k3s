@@ -3,8 +3,11 @@ cluster:
 	k3d cluster create --config k3d/k3d-development-cluster.yaml
 
 .PHONY: develop
-develop: cluster
-	# First apply will fail due to CRDs not being applied in time
+develop: cluster apply
+
+.PHONY: apply
+apply:
+	# First apply may fail if CRDs are not being applied in time
 	- kubectl apply -k 00_init/development-secrets
 	kubectl apply -k 00_init/development-secrets
 
