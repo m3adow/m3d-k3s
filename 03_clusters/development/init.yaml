@@ -11,5 +11,5 @@ spec:
     name: m3d-k3s
   path: ./00_init/development
   prune: true
+  timeout: 2m30s
   wait: true
-  timeout: 5m0s
