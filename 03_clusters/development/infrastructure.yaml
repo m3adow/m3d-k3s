@@ -5,7 +5,7 @@ metadata:
   name: infrastructure
   namespace: flux-system
 spec:
-  interval: 10m0s
+  interval: 2m0s
   dependsOn:
     - name: init
   sourceRef:
@@ -13,5 +13,5 @@ spec:
     name: m3d-k3s
   path: ./01_infrastructure/development
   prune: true
+  timeout: 2m30s
   wait: true
-  timeout: 5m0s
