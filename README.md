@@ -40,10 +40,10 @@ Other tasks:
 
 ## Development
 
-Development is done via [k3d](https://k3d.io/). I recommend to set ACLs for the `volumes` folder:
+Development is done via [k3d](https://k3d.io/). Persistent data (volumes) will be written to `${K3D_DIR}` if set or `/tmp/` otherwise. I also recommend to set ACLs for the `volumes` folder:
 
 ```bash
-setfacl -Rdm ${USER}:rwx k3d/volumes/
+setfacl -Rdm ${USER}:rwx ${K3D_DIR}
 ```
 
 This will prevent permission problems when `clean`ing the development environment.

@@ -10,10 +10,15 @@ options:
   k3d:
     wait: true
     timeout: "60s"
+registries:
+  create:
+    name: registry.localhost
+    host: "0.0.0.0"
+    hostPort: "5000"
 volumes:
-  - volume: /srv/k3d/volumes/manifests/:/var/lib/rancher/k3s/server/manifests/
+  - volume: "${K3D_DIRECTORY}/manifests:/var/lib/rancher/k3s/server/manifests/"
     nodeFilters:
       - all
-  - volume: /srv/k3d/volumes/storage/:/var/lib/rancher/k3s/storage
+  - volume: "${K3D_DIRECTORY}/storage/:/var/lib/rancher/k3s/storage"
     nodeFilters:
       - all
