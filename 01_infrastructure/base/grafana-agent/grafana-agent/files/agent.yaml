@@ -13,7 +13,7 @@ metrics:
           basic_auth:
             # As the username can't be referenced via secret, use Flux' postBuild feature to replace a variable
             username: ${PROMETHEUS_BASIC_AUTH_USER}
-            password_file: /srv/basic-auth-password/PROMETHEUS_BASIC_AUTH_PASSWORD
+            password_file: /srv/basic-auth-passwords/PROMETHEUS_BASIC_AUTH_PASSWORD
       scrape_configs:
         - bearer_token_file: /var/run/secrets/kubernetes.io/serviceaccount/token
           job_name: integrations/kubernetes/cadvisor
