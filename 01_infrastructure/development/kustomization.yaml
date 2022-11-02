@@ -6,5 +6,6 @@ resources:
   - ../base
 
 patchesStrategicMerge:
-  - mysql/patch-sealed-secret.yaml
   - cert-manager/patch-sealed-secret-email.yaml
+  - mysql/patch-sealed-secret.yaml
+  - grafana-agent/patch-sealed-secret.yaml

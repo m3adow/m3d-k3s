@@ -6,6 +6,7 @@ resources:
   - cert-manager
   - composable-operator
   - db-operator
+  - grafana-agent
   - mysql
   - mysql-operator
   - sealed-secrets
