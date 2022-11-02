@@ -10,4 +10,5 @@ resources:
   - ../development
   - namespace.yaml
   - secret/flux/secret-flux-ssh.yaml
+  - secret/grafana-agent/secret-basic-auth-passwords.yaml
   - secret/sealed-secrets/secret-sealed-secrets-key.yaml

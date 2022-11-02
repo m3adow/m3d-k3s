@@ -1,0 +1,24 @@
+---
+apiVersion: monitoring.grafana.com/v1alpha1
+kind: GrafanaAgent
+metadata:
+  name: grafana-agent
+spec:
+  image: grafana/agent:v0.32.1
+  integrations:
+    selector:
+      matchLabels:
+        agent: grafana-agent
+  logs:
+    instanceSelector:
+      matchLabels:
+        agent: grafana-agent
+  metrics:
+    externalLabels:
+      # Should be set in the overlays
+      cluster: ""
+    instanceSelector:
+      matchLabels:
+        agent: grafana-agent
+    scrapeInterval: 60s
+  serviceAccountName: grafana-agent
