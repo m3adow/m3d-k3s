@@ -6,6 +6,7 @@ namespace: grafana-agent
 
 resources:
   - composable-secret.yaml
+  - daemonset.yaml
   - namespace.yaml
   - rbac.yaml
   - service.yaml
@@ -15,4 +16,7 @@ resources:
 configMapGenerator:
   - name: grafana-agent
     files:
-      - files/agent.yaml
+      - files/grafana-agent.yaml
+  - name: grafana-agent-logs
+    files:
+      - files/grafana-agent-logs.yaml
