@@ -5,8 +5,4 @@ kind: Kustomization
 namespace: kube-prometheus-stack
 
 resources:
-  - composable-mysql-root-credentials.yaml
-  - dbinstance.yaml
   - helmrelease.yaml
-  - namespace.yaml
-  - rbac.yaml
