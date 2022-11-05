@@ -12,6 +12,7 @@ resources:
   - helm-repositories/kloeckner.yaml
   - helm-repositories/mysql.yaml
   - helm-repositories/nextcloud.yaml
+  - helm-repositories/prometheus-community.yaml
   - helm-repositories/sealed-secrets.yaml
 
   - sealed-secret.yaml
