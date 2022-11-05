@@ -106,4 +106,3 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: grafana-agent-logs
-    namespace: ${NAMESPACE}
