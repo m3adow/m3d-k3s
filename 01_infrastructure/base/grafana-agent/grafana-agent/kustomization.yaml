@@ -10,7 +10,7 @@ resources:
   - namespace.yaml
   - rbac.yaml
   - service.yaml
-  - serviceaccount.yaml
+  - serviceaccounts.yaml
   - statefulset.yaml
 
 configMapGenerator:
