@@ -16,7 +16,7 @@ resources:
 configMapGenerator:
   - name: grafana-agent
     files:
-      - files/grafana-agent.yaml
+      - agent.yaml=files/grafana-agent.yaml
   - name: grafana-agent-logs
     files:
-      - files/grafana-agent-logs.yaml
+      - agent.yaml=files/grafana-agent-logs.yaml
