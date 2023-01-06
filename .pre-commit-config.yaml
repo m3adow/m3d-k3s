@@ -28,18 +28,16 @@ repos:
     rev: v2.1.1
     hooks:
       - id: forbid-secrets
-  # - repo: https://github.com/Agilicus/pre-commit-hook-k8svalidate.git
-  #   rev: v0.1.0
+  # - repo: https://github.com/kubevious/cli
+  #   rev: v1.0.50
   #   hooks:
-  #     - id: k8svalidate
-  #       files: .yaml$
-  # - repo: https://github.com/stackrox/kube-linter
-  #   rev: 0.5.0
-  #   hooks:
-  #     - id: kube-linter-docker
-  #       args: ["lint"]
-  # - repo: https://github.com/bridgecrewio/checkov.git
-  #   rev: 2.1.201
-  #   hooks:
-  #     - id: checkov
-  #       args: [-d .]
+  #     - id: kubevious-guard
+  #       args:
+  #         - guard
+  #         - --ignore-unknown
+  #         - --ignore-non-k8s
+  #         - 00_init/development
+  #         - 01_infrastructure/development
+  #         - 02_apps
+  #         - 03_clusters
+  #         - mock
