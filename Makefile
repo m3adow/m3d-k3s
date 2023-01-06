@@ -15,6 +15,8 @@ apply:
 clean:
 	- k3d cluster delete develop
 	# The next commands may fail depending on user and dir permissions
+	# This is slightly dangerous in case ${HOME} is not set, but deleting from /tmp/
+	# shouldn't be a big problem
 	- rm -rf k3d/volumes/storage/*
 	- sudo -n -- rm -rf k3d/volumes/storage/*
 

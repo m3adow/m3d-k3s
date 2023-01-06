@@ -11,9 +11,9 @@ options:
     wait: true
     timeout: "60s"
 volumes:
-  - volume: /srv/k3d/volumes/manifests/:/var/lib/rancher/k3s/server/manifests/
+  - volume: "${HOME}/src/m3d-k3s/k3d-volumes/manifests/:/var/lib/rancher/k3s/server/manifests/"
     nodeFilters:
       - all
-  - volume: /srv/k3d/volumes/storage/:/var/lib/rancher/k3s/storage
+  - volume: "${HOME}/src/m3d-k3s/k3d-volumes/storage/:/var/lib/rancher/k3s/storage"
     nodeFilters:
       - all
