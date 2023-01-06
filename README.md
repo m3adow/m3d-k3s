@@ -4,6 +4,8 @@
 
 Kubernetes manifests as well as some K3s/K3d configuration manifests intended for a "home production ready" single-node installation, including [Day 2 operations](https://codilime.com/blog/day-0-day-1-day-2-the-software-lifecycle-in-the-cloud-age/) tasks like Backups and keeping software, Helm Charts and images up to date.
 
+For now, the project will use free SaaS offerings where applicable (e.g. for Metrics & Monitoring).
+
 Intended infrastructure scope:
 
 - [x] cert-manager
