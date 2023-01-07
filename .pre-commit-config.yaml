@@ -28,16 +28,15 @@ repos:
     rev: v2.1.1
     hooks:
       - id: forbid-secrets
-  # - repo: https://github.com/kubevious/cli
-  #   rev: v1.0.50
-  #   hooks:
-  #     - id: kubevious-guard
-  #       args:
-  #         - guard
-  #         - --ignore-unknown
-  #         - --ignore-non-k8s
-  #         - 00_init/development
-  #         - 01_infrastructure/development
-  #         - 02_apps
-  #         - 03_clusters
-  #         - mock
+  - repo: https://github.com/kubevious/cli
+    rev: v1.0.51
+    hooks:
+      - id: kubevious-guard
+        args:
+          - guard
+          - 00_init/development
+          - 01_infrastructure/development
+          - 02_apps
+          - 03_clusters
+          - mock
+          - --ignore-unknown

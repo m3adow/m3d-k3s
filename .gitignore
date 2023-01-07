@@ -7,3 +7,5 @@
 /k3d/install.sh
 # k3d/k3s default manifests aren't really useful
 /k3d/volumes
+
+.history
