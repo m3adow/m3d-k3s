@@ -28,3 +28,11 @@ resources:
   - https://raw.githubusercontent.com/grafana/agent/main/production/operator/crds/monitoring.grafana.com_logsinstances.yaml?ref=grafana-agent-operator-0.2.10
   - https://raw.githubusercontent.com/grafana/agent/main/production/operator/crds/monitoring.grafana.com_metricsinstances.yaml?ref=grafana-agent-operator-0.2.10
   - https://raw.githubusercontent.com/grafana/agent/main/production/operator/crds/monitoring.grafana.com_podlogs.yaml?ref=grafana-agent-operator-0.2.10
+
+patches:
+  - patch: |-
+      - op: remove
+        path: /metadata/creationTimestamp
+    target:
+      kind: CustomResourceDefinition
+      name: composables.ibmcloud.ibm.com
