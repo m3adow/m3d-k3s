@@ -8,7 +8,8 @@ spec:
   chart:
     spec:
       chart: db-operator
-      version: <2.0.0
+      # DB Operator changes CRD behaviour with 1.7.0 which I don't want to look into right now
+      version: <1.7.0
       sourceRef:
         kind: HelmRepository
         name: kloeckner
