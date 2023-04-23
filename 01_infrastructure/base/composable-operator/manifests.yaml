@@ -1,4 +1,4 @@
-# source: https://github.com/composable-operator/composable/releases/download/v0.2.1/manifests.yaml
+# source: https://github.com/composable-operator/composable/releases/download/v0.3.1/manifests.yaml
 # Changes:
 # * Removed CRDs (moved to init phase)
 # * Added "readOnlyRootFilesystem: true" securityContext to "composable-controller-manager" and "kube-rbac-proxy" Deployments (kube-linter errors)
@@ -209,7 +209,7 @@ spec:
             - --leader-elect
           command:
             - /manager
-          image: ghcr.io/composable-operator/composable:0.2.1
+          image: ghcr.io/composable-operator/composable:0.3.1
           livenessProbe:
             httpGet:
               path: /healthz
