@@ -7,5 +7,5 @@ resources:
   - flux/flux-kustomization.yaml
   - flux/git-repository.yaml
 
-patchesStrategicMerge:
-  - flux/patch-sealed-secret.yaml
+patches:
+  - path: flux/patch-sealed-secret.yaml
