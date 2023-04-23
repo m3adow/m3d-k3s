@@ -24,6 +24,8 @@ patches:
       name: grafana-agent
       version: v1alpha1
 
-  - path: cert-manager/patch-sealed-secret-email.yaml
-  - path: mysql/patch-sealed-secret.yaml
-  - path: monitoring/patch-sealedsecrets.yaml
+  # Patch in correct secret values
+  - path: cert-manager/patch-sealedsecret-email.yaml
+  - path: monitoring/patch-sealedsecret-logs-secret.yaml
+  - path: monitoring/patch-sealedsecret-metrics-secret.yaml
+  - path: mysql/patch-sealedsecret.yaml
