@@ -8,4 +8,4 @@ resources:
   - flux/git-repository.yaml
 
 patches:
-  - path: flux/patch-sealed-secret.yaml
+  - path: flux/patch-sealedsecret.yaml

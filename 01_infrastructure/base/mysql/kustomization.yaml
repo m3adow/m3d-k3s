@@ -10,4 +10,4 @@ resources:
   - pvc-bind-job.yaml
   - pvc-main-db-backups.yaml
   - rbac.yaml
-  - sealed-secret.yaml
+  - sealedsecret.yaml

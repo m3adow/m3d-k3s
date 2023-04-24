@@ -14,6 +14,6 @@ resources:
   - helm-repositories/mysql.yaml
   - helm-repositories/nextcloud.yaml
   - helm-repositories/prometheus-community.yaml
-  - helm-repositories/sealed-secrets.yaml
+  - helm-repositories/sealedsecrets.yaml
 
-  - sealed-secret.yaml
+  - sealedsecret.yaml
