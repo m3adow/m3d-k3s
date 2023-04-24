@@ -30,6 +30,7 @@ Extended infrastructure scope (applications considered for later):
 - [ ] [Hajimari](https://github.com/toboshii/hajimari)
 - [ ] [Reloader](https://github.com/stakater/Reloader)
 - [ ] Better Grafana Cloud alerting solution
+- [ ] [Vertical Pod Autoscaler](https://github.com/kubernetes/autoscaler/tree/master/vertical-pod-autoscaler) & [Goldilocks](https://goldilocks.docs.fairwinds.com/#how-can-this-help-with-my-resource-settings)
 
 Application scope (subject to change):
 
@@ -40,6 +41,7 @@ Application scope (subject to change):
 Other tasks:
 
 - [x] Create Makefile for bootstrapping
+- [ ] Add requests & limits to resources _(will be done later, potentially with VPA)_
 
 ## Development
 
