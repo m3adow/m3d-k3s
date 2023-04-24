@@ -5,7 +5,7 @@ metadata:
   name: apps
   namespace: flux-system
 spec:
-  interval: 10m0s
+  interval: 2m0s
   dependsOn:
     - name: infrastructure
   sourceRef:
@@ -13,4 +13,5 @@ spec:
     name: m3d-k3s
   path: ./02_apps/base
   prune: true
+  timeout: 5m
   wait: true

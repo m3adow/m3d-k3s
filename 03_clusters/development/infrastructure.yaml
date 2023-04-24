@@ -5,13 +5,18 @@ metadata:
   name: infrastructure
   namespace: flux-system
 spec:
-  interval: 10m0s
+  interval: 2m0s
   dependsOn:
     - name: init
   sourceRef:
     kind: GitRepository
     name: m3d-k3s
   path: ./01_infrastructure/development
+  postBuild:
+    substituteFrom:
+      - kind: Secret
+        name: grafana-agent-basic-auth-credentials
+        optional: false
   prune: true
+  timeout: 2m30s
   wait: true
-  timeout: 5m0s

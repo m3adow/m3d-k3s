@@ -5,6 +5,27 @@ kind: Kustomization
 resources:
   - ../base
 
-patchesStrategicMerge:
-  - mysql/patch-sealed-secret.yaml
-  - cert-manager/patch-sealed-secret-email.yaml
+patches:
+  # Add proper cluster label to Grafana data
+  - patch: |-
+      - op: replace
+        path: /spec/clients/0/externalLabels/cluster
+        value: "develop"
+    target:
+      kind: LogsInstance
+      name: grafana-agent-logs
+      version: v1alpha1
+  - patch: |-
+      - op: replace
+        path: /spec/metrics/externalLabels/cluster
+        value: "develop"
+    target:
+      kind: GrafanaAgent
+      name: grafana-agent
+      version: v1alpha1
+
+  # Patch in correct secret values
+  - path: cert-manager/patch-sealedsecret-email.yaml
+  - path: monitoring/patch-sealedsecret-logs-secret.yaml
+  - path: monitoring/patch-sealedsecret-metrics-secret.yaml
+  - path: mysql/patch-sealedsecret.yaml

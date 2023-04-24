@@ -1,8 +1,8 @@
 ---
-apiVersion: "kci.rocks/v1alpha1"
-kind: "Database"
+apiVersion: kci.rocks/v1alpha1
+kind: Database
 metadata:
-  name: "nextcloud"
+  name: nextcloud
 spec:
   secretName: db-credentials
   instance: mysql-main

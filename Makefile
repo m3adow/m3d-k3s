@@ -1,10 +1,22 @@
+SHELL = /bin/bash
+
+ifdef K3D_DIR
+K3D_DIRECTORY := $(K3D_DIR)
+else
+K3D_DIRECTORY:= /tmp
+endif
+
+
 .PHONY: cluster
 cluster:
 	k3d cluster create --config k3d/k3d-development-cluster.yaml
 
 .PHONY: develop
-develop: cluster
-	# First apply will fail due to CRDs not being applied in time
+develop: cluster apply
+
+.PHONY: apply
+apply:
+	# First apply may fail if CRDs are not being applied in time
 	- kubectl apply -k 00_init/development-secrets
 	kubectl apply -k 00_init/development-secrets
 
@@ -12,8 +24,10 @@ develop: cluster
 clean:
 	- k3d cluster delete develop
 	# The next commands may fail depending on user and dir permissions
-	- rm -rf k3d/volumes/storage/*
-	- sudo -n -- rm -rf k3d/volumes/storage/*
+	# This is slightly dangerous in case $${HOME} is not set, but deleting from /tmp/
+	# shouldn't be a big problem
+	- rm -rf $(K3D_DIRECTORY)/storage/*
+	- sudo -n -- rm -rf $(K3D_DIRECTORY)/storage/*
 
 .PHONY: new
 new: clean develop

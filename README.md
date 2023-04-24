@@ -4,6 +4,8 @@
 
 Kubernetes manifests as well as some K3s/K3d configuration manifests intended for a "home production ready" single-node installation, including [Day 2 operations](https://codilime.com/blog/day-0-day-1-day-2-the-software-lifecycle-in-the-cloud-age/) tasks like Backups and keeping software, Helm Charts and images up to date.
 
+For now, the project will use free SaaS offerings where applicable (e.g. for Metrics & Monitoring).
+
 Intended infrastructure scope:
 
 - [x] cert-manager
@@ -15,7 +17,8 @@ Intended infrastructure scope:
 - [ ] [k8up](https://github.com/k8up-io/k8up) ❄❄❄ on hold for now ❄❄❄ (hoping for an imminent implementation of [k8up issue #319](https://github.com/k8up-io/k8up/issues/319))
 - [x] [Flux](https://fluxcd.io/) _may be revisited in the future for image automation or notifications_
 - [ ] [External DNS](https://github.com/kubernetes-sigs/external-dns)
-- [ ] Prometheus + Alertmanager
+- [x] ~~Prometheus + Alertmanager~~ _(succeeded by Grafana-Agent-Operator)_
+- [x] [Grafana-Agent-Operator](https://grafana.com/docs/grafana-cloud/kubernetes-monitoring/) (better alert config solution may be required in the future)
 - [ ] [Renovate](https://docs.renovatebot.com/)
 
 Extended infrastructure scope (applications considered for later):
@@ -26,24 +29,26 @@ Extended infrastructure scope (applications considered for later):
 - [ ] [Goldilocks](https://goldilocks.docs.fairwinds.com/)
 - [ ] [Hajimari](https://github.com/toboshii/hajimari)
 - [ ] [Reloader](https://github.com/stakater/Reloader)
+- [ ] Better Grafana Cloud alerting solution
+- [ ] [Vertical Pod Autoscaler](https://github.com/kubernetes/autoscaler/tree/master/vertical-pod-autoscaler) & [Goldilocks](https://goldilocks.docs.fairwinds.com/#how-can-this-help-with-my-resource-settings)
 
 Application scope (subject to change):
 
 - [ ] [Nextcloud](https://nextcloud.com/) _(Basic installation stuff done, customization WIP)_
 - [ ] [Nitter](https://github.com/zedeus/nitter)
-- [ ] [Tiny Tiny RSS](https://tt-rss.org/)
 - [ ] [Firefox Sync](https://github.com/mozilla/fxa/)
 
 Other tasks:
 
 - [x] Create Makefile for bootstrapping
+- [ ] Add requests & limits to resources _(will be done later, potentially with VPA)_
 
 ## Development
 
-Development is done via [k3d](https://k3d.io/). I recommend to set ACLs for the `volumes` folder:
+Development is done via [k3d](https://k3d.io/). Persistent data (volumes) will be written to `${K3D_DIR}` if set or `/tmp/` otherwise. I also recommend to set ACLs for the `volumes` folder:
 
 ```bash
-setfacl -Rdm ${USER}:rwx k3d/volumes/
+setfacl -Rdm ${USER}:rwx ${K3D_DIR}
 ```
 
 This will prevent permission problems when `clean`ing the development environment.

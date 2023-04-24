@@ -19,3 +19,10 @@ spec:
   upgrade:
     remediation:
       retries: 3
+  values:
+    # The original Oracle Registry is as slow as one would expect of Oracle quality, so this may be required
+    # It doesn't always serve the latest version though
+    # image:
+    #   registry: docker.io
+    #   repository: mysql
+    #   name: mysql-operator

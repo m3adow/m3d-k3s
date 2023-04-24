@@ -1,6 +1,7 @@
 ---
 name: pre-commit
 
+# yamllint disable-line rule:truthy
 on:
   pull_request:
 
@@ -17,4 +18,4 @@ jobs:
       # Run additional longer running pre-commit hooks
       - uses: pre-commit/action@v3.0.0
         with:
-          extra_args: --config .pre-commit-config-ci.yaml --all-files
+          extra_args: --all-files --hook-stage pre-commit --hook-stage pre-push
