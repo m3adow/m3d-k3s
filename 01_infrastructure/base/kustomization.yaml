@@ -6,6 +6,7 @@ resources:
   - cert-manager
   - composable-operator
   - db-operator
+  - external-dns
   - monitoring
   - mysql
   - mysql-operator

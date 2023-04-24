@@ -26,6 +26,8 @@ patches:
 
   # Patch in correct secret values
   - path: cert-manager/patch-sealedsecret-email.yaml
+  - path: external-dns/patch-helmrelease.yaml
+  - path: external-dns/patch-sealedsecret.yaml
   - path: monitoring/patch-sealedsecret-logs-secret.yaml
   - path: monitoring/patch-sealedsecret-metrics-secret.yaml
   - path: mysql/patch-sealedsecret.yaml

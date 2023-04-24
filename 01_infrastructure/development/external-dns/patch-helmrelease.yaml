@@ -1,0 +1,29 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: external-dns
+  namespace: external-dns
+spec:
+  values:
+    env:
+      # I don't want to publish the domains I'm using
+      - name: EXTERNAL_DNS_DOMAIN_FILTER
+        valueFrom:
+          secretKeyRef:
+            key: EXTERNAL_DNS_DOMAIN_FILTER
+            name: external-dns
+      - name: EXTERNAL_DNS_ZONE_ID_FILTER
+        valueFrom:
+          secretKeyRef:
+            key: EXTERNAL_DNS_ZONE_ID_FILTER
+            name: external-dns
+      - name: CF_API_TOKEN
+        valueFrom:
+          secretKeyRef:
+            key: CF_API_TOKEN
+            name: external-dns
+    sources:
+      - ingress
+    txtOwnerId: m3d-k3s/external-dns-develop
+    txtPrefix: _external-dns-develop.
