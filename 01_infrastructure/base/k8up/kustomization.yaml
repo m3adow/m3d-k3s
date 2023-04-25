@@ -5,6 +5,5 @@ kind: Kustomization
 namespace: k8up
 
 resources:
-  - crds.yaml
-  - helmchart.yaml
+  - helmrelease.yaml
   - namespace.yaml
