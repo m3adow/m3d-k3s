@@ -14,8 +14,6 @@ resources:
 
   # MySQL Operator
   - https://raw.githubusercontent.com/mysql/mysql-operator/8.0.33-2.0.9/deploy/deploy-crds.yaml
-  # Prometheus Operator
-  #- https://github.com/prometheus-operator/prometheus-operator/releases/download/v0.60.1/stripped-down-crds.yaml
   # Sealed Secrets
   - https://raw.githubusercontent.com/bitnami-labs/sealed-secrets/v0.19.1/helm/sealed-secrets/crds/bitnami.com_sealedsecrets.yaml
 
