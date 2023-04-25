@@ -8,12 +8,13 @@ resources:
   - github.com/fluxcd/flux2/manifests/install?ref=v0.41.2
 
   - helm-repositories/bitnami.yaml
+  - helm-repositories/external-dns.yaml
   - helm-repositories/grafana.yaml
   - helm-repositories/jetstack.yaml
   - helm-repositories/kloeckner.yaml
   - helm-repositories/mysql.yaml
   - helm-repositories/nextcloud.yaml
   - helm-repositories/prometheus-community.yaml
-  - helm-repositories/sealed-secrets.yaml
+  - helm-repositories/sealedsecrets.yaml
 
-  - sealed-secret.yaml
+  - sealedsecret.yaml

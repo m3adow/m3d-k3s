@@ -9,4 +9,4 @@ resources:
   - helmrelease.yaml
   - namespace.yaml
   - rbac.yaml
-  - sealed-secret-email.yaml
+  - sealedsecret-email.yaml

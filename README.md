@@ -16,7 +16,7 @@ Intended infrastructure scope:
 - [x] [Composable Operator](https://github.com/composable-operator/composable)
 - [ ] [k8up](https://github.com/k8up-io/k8up) ❄❄❄ on hold for now ❄❄❄ (hoping for an imminent implementation of [k8up issue #319](https://github.com/k8up-io/k8up/issues/319))
 - [x] [Flux](https://fluxcd.io/) _may be revisited in the future for image automation or notifications_
-- [ ] [External DNS](https://github.com/kubernetes-sigs/external-dns)
+- [x] [External DNS](https://github.com/kubernetes-sigs/external-dns) _(Has to be tested more thoroughly lateron)_
 - [x] ~~Prometheus + Alertmanager~~ _(succeeded by Grafana-Agent-Operator)_
 - [x] [Grafana-Agent-Operator](https://grafana.com/docs/grafana-cloud/kubernetes-monitoring/) (better alert config solution may be required in the future)
 - [ ] [Renovate](https://docs.renovatebot.com/)
