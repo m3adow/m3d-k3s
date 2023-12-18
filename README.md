@@ -1,5 +1,9 @@
 # m3d-k3s
 
+This repo has been deprecated in favor of [Wieseschwarm](https://github.com/m3adow/wieseschwarm).
+
+## Original README below
+
 **Work in progress!**
 
 Kubernetes manifests as well as some K3s/K3d configuration manifests intended for a "home production ready" single-node installation, including [Day 2 operations](https://codilime.com/blog/day-0-day-1-day-2-the-software-lifecycle-in-the-cloud-age/) tasks like Backups and keeping software, Helm Charts and images up to date.
